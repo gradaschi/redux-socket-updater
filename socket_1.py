@@ -16,7 +16,7 @@ def send_data():
         data['data'] = fake_data
         socketio.emit('message_from_server', data)
         print('Sent fake data:', fake_data)
-        socketio.sleep(0.1)
+        socketio.sleep(0.8)
 
 
 @socketio.on('connect')

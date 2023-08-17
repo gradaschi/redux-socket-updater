@@ -1,4 +1,5 @@
 import io from "socket.io-client";
+import { setUpdateUser } from "../redux/containers/User/action";
 
 const socket = io("http://localhost:9999");
 
@@ -11,7 +12,7 @@ export const initSocket = (dispatch) => {
   });
 
   socket.on("message_from_server", (data) => {
-    dispatch({ type: "UPDATE_STATE", payload: data });
+    dispatch(setUpdateUser(data));
   });
 
   socket.on("disconnect", () => {

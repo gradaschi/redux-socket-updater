@@ -1,12 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import Home from "./main/pages/Home";
+import User from "./main/pages/User";
 
 const App = () => {
-  const message = useSelector((state: any) => state.message);
-
   return (
-    <div>
-      <h1>Current Value: {message.data}</h1>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        marginTop: 100,
+      }}
+    >
+      <Home />
+      <User />
     </div>
   );
 };
